@@ -1,156 +1,163 @@
 <!DOCTYPE html>
-<html>
-<body>
-    <head>
-        <title>Practice for HTML</title>
-        <style>
-        .container {
-            width: 100%;   ;
-            height: 100vh;
-            border: 2px solid black;
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice for HTML</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        label {
+            margin-top: 10px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        input, select {
+            margin: 10px 0 15px 0;
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        /* Grid Layout */
+        .grid-container {
             display: grid;
-            /* grid-template-columns: [pehla] 120px [doosra] 100px [t]; */
-            /* grid-template-rows: 100px 100px 100px; */
-            /* grid-template-columns: repeat(4, minmax(100px, 1fr)); */
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(4, 1fr);
-            /* gap: 34px; */
-            row-gap: 10px;
-            column-gap: 44px;
+            gap: 10px 20px;
             justify-items: center;
-
             align-items: center;
+            margin-top: 30px;
+            grid-template-areas: "header header ";
+            grid-template-areas: "main sidebar";
+                                    
         }
 
         .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
             border: 2px solid red;
-            height: 55px;
-            width: 55px;
+            background-color: #f1f1f1;
+        }
+
+        /* Footer Styling */
+        footer {
             text-align: center;
+            margin-top: 30px;
+            font-weight: bold;
+
         }
 
-        .item-4 {
-            /* grid-row: 1/2;
-            grid-column: pehla/t; */
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
-        .item-1 {
-            /* grid-row: 1/2; */
-            /* or you can do  */
-            /* grid-row-start: 1;
-            grid-row-end: 2; */
-
-            /* same thing */
-            /* grid-column: 1/2; */
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
         }
-        }
-</style>
-    </head>
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Practice for HTML</h1>
+    </header>
 
-<header>Practice for html</header>
-<h1>User information</h1>
-<p>Please fill the following details</p>
+    <section>
+        <h2>User Information</h2>
+        <p>Please fill in the following details:</p>
 
-<label for="first-name">First name</label><br>
-<input type="text" id="first-name"><br>
+        <form>
+            <label for="first-name">First name</label>
+            <input type="text" id="first-name" name="first-name">
 
-<label for="surname">Surname</label><br>
-<input type="text" id="surname"><br>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" name="surname">
 
-<label for="age">Age</label><br>
-<input type="number" id="age"><br>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age">
 
-<label for="email">Email</label><br>
-<input type="text" id="email"><br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
 
-<label for="username">Username</label><br>
-<input type="text" id="username"><br>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
 
-<label for="password">Password</label><br>
-<input type="password" id="password"><br>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+
+            <p>Please select one of the following:</p>
+            <input type="radio" name="info" id="radio-name">
+            <label for="radio-name">Name</label>
+
+            <input type="radio" name="info" id="radio-age">
+            <label for="radio-age">Age</label>
+
+            <input type="radio" name="info" id="radio-surname">
+            <label for="radio-surname">Surname</label>
+
+            <p>Please select your country:</p>
+            <select id="country" name="country">
+                <option value="Pakistan">Pakistan</option>
+                <option value="India">India</option>
+                <option value="Bangladesh">Bangladesh</option>
+                <option value="Sri Lanka">Sri Lanka</option>
+            </select>
+
+            <p>Please select your city:</p>
+            <select id="city" name="city">
+                <option value="Karachi">Karachi</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Quetta">Quetta</option>
+            </select>
+        </form>
+    </section>
 
 
-<p>please select one of the following ; </p>
-<input type="radio" name="info" id="radio-name">
-<label for="radio-name">Name</label>
-
-<input type="radio" name="info" id="radio-age">
-<label for="radio-age">Age</label>
-
-<input type="radio" name="info" id="radio-surname">
-<label for="radio-surname">Surname</label><br>
-
-
-<p>please select your country</p>
-
-<select id="country">
-    <option value="Pakistan">Pakistan</option>
-    <option value="India">India</option>
-    <option value="Bangladesh">Bangladesh</option>
-    <option value="Sri Lanka">Sri Lanka</option>
-</select>
-     
-<p>please select your city</p>
-
-<select id="city">
-    <option value="Karachi">Karachi</option>
-    <option value="Lahore">Lahore</option>
-    <option value="Islamabad">Islamabad</option>
-    <option value="Quetta">Quetta</option>
-</select>
-
-<p>The details mentioned above are as follows</p>
-
-<dl>
-    <dt>Name</dt>
-    <dd>Talha</dd>
-    <dt>Age</dt>
-    <dd>25</dd>
-    <dt>Surname</dt>
-    <dd>Imran</dd>
-    <dt>email</dt>
-    <dd>......@gmail.com</dd>
-    <dt>Username</dt>
-    <dd>talha</dd>
-    <dt>Password</dt>
-    <dd>1234</dd>
-    <dt>Country</dt>
-    <dd>Pakistan</dd>
-    <dt>City</dt>
-    <dd>Karachi</dd>
-
-</dl>
     <main>
-        <div class="container">
-            <div class="item item-7">1</div>
+        <div class="grid-container">
+            <div class="item">1</div>
             <div class="item">2</div>
-            <div class="item ">3</div>
-            <div class="item ">4</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
             <div class="item">5</div>
-            <div class="item">6</div>
-            <div class="item item-1">7</div>
-            <div class="item">8</div>
-            <div class="item">9</div>   
-            <div class="item">10</div>
-            <div class="item">11</div>
-            <div class="item">12</div>
-            <div class="item">13</div>
-            <div class="item">14</div>
-            <div class="item">15</div>
-            <div class="item">16</div>
-            <div class="item">17</div>
-            <div class="item">18</div>
-            <div class="item">19</div>
-            <div class="item">20</div>
-
-          
-
-
+            
         </div>
-
     </main>
-    <footer>Practice for html</footer>
 
-
+    <footer>
+        Practice for HTML
+    </footer>
 </body>
 </html>
