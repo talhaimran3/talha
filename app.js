@@ -43,7 +43,35 @@ const person4Details = new myClass2("New York", "Bachelors");
 const person5 = new myClass("Jane", 28);
 
 console.log(person4Details.city);
-asd
-89
-=======
+
+function getData(){
+    
+return new Promise( (resolve,reject) => {
+    setTimeout(() => {
+        const data = {name:"john", age: 30};
+        const isSuccess=true;
+if (isSuccess){
+resolve(data);
+}
+else{
+reject("failure");
+}
+        }, 2000);
+    });
+}
+getData()
+    .then((data)=> {
+        console.log("data fetched", data);
+    })
+
+    .catch((error)=> {
+        console.log("error",error);
+});
+    // .then((data) => {
+    //     console.log("Data fetched:", data); // Success handler
+    // })
+    // .catch((error) => {
+    //     console.error("Error:", error); // Error handler
+    // });
+
 
