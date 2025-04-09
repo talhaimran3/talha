@@ -46,3 +46,4 @@ const person5 = new myClass("Jane", 28);
 
 console.log(person4Details.city);
 asd
+89
