@@ -45,3 +45,4 @@ const person4Details = new myClass2("New York", "Bachelors");
 const person5 = new myClass("Jane", 28);
 
 console.log(person4Details.city);
+asd
