@@ -1,6 +1,4 @@
-// function quickGreet() {
-//     console.log("First Hello World!");
-// }
+
 
 // setTimeout(quickGreet, 5000);
 // const secondGreet =()=>{
@@ -47,3 +45,5 @@ const person5 = new myClass("Jane", 28);
 console.log(person4Details.city);
 asd
 89
+=======
+
