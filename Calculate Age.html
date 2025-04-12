@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Age</title>
+</head>
+<style>
+    body {
+        margin-top: 17vh;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: white;
+        box-shadow: 7px 5px 12px 2px;
+        padding: 16px;
+        border-radius: 11px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 style="    text-align: center;">Welcome to Age Calculator</h1>
+        <label>Enter Your Date of Birth</label>
+        <input type="date" id="birthDate" name="birthday"><br>
+        <button id="calculate">Calculate Age</button>
+        <p id="result">Age: </p>
+    </div>
+    <script >
+    const birthDate = document.getElementById("birthDate");
+const calculate = document.getElementById("calculate");
+const result = document.getElementById("result");
+
+function calculateAge() {
+    const DOB = new Date(birthDate.value);// it stores the value of birthday which is stored via table
+    const currentDate = new Date(); //get the current date
+    let currentAge = currentDate.getFullYear() - DOB.getFullYear();
+    const monthDifference = currentDate.getMonth() - DOB.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && currentDate.getDate() < DOB.getDate())) {
+        currentAge--;
+        if (DOB > currentDate) {
+            document.getElementById("result").innerText = "date is incorrect";
+           return;
+        }
+       
+    } // if age is in the same month then it will show less than the actual age
+
+        result.innerText = `Age: ${currentAge}`;
+        console.log(`Your age is ${currentAge} years`);
+    }
+    calculate.addEventListener("click", calculateAge);
+     </script>
+</body>
+
+
+</html>
